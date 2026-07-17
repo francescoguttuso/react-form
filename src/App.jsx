@@ -13,7 +13,13 @@ function App() {
         </ul>
       </div>
 
-      <form>
+      <form onSubmit={e => {
+        e.preventDefault();
+        if (inputValue.trim() !== '') {
+          setItems(items => items.concat(inputValue));
+          setInputValue('');
+        }
+      }}>
         <input
           type="text"
           placeholder="Inserisci nuovo elemento"
