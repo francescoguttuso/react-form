@@ -17,7 +17,7 @@ function App() {
 
       <form className="form">
         <input type="text" placeholder="Inserisci nuovo elemento" />
-        <button type="submit" onClick={(e) => { e.preventDefault() }}>Invia</button>
+        <button type="submit">Invia</button>
       </form >
     </>
   )
