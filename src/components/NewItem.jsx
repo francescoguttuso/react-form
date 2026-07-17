@@ -2,23 +2,23 @@ import { useState } from "react";
 import "./NewItem.css";
 
 export const NewItem = (props) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputAuthor, setInputAuthor] = useState("");
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (inputValue.trim() !== "") {
-          props.setItems((items) => items.concat(inputValue));
-          setInputValue("");
+        if (inputAuthor.trim() !== "") {
+          props.setItems((items) => items.concat(inputAuthor));
+          setInputAuthor("");
         }
       }}
     >
       <input
         type="text"
-        placeholder="Inserisci nuovo elemento"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Inserisci autore"
+        value={inputAuthor}
+        onChange={(e) => setInputAuthor(e.target.value)}
       />
       <button type="submit">Invia</button>
     </form>
