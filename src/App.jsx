@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import { Items } from "./components/Items";
+import { NewItem } from "./components/NewItem";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -7,23 +9,9 @@ function App() {
 
   return (
     <>
-      <div className="Lista">
-        <ul>
-          {items.map((item) => (
-            <li key={item}>
-              {item}{" "}
-              <button
-                onClick={() =>
-                  setItems(items.filter((_item) => _item !== item))
-                }
-              >
-                Elimina
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Items items={items} />
 
+      <NewItem />
       <form
         onSubmit={(e) => {
           e.preventDefault();
