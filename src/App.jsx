@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
   const [items, setItems] = useState([]);
-
+  const [inputValue, setInputValue] = useState('');
 
   return (
     <>
@@ -13,8 +13,13 @@ function App() {
         </ul>
       </div>
 
-      <form className="form">
-        <input type="text" placeholder="Inserisci nuovo elemento" />
+      <form>
+        <input
+          type="text"
+          placeholder="Inserisci nuovo elemento"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
         <button type="submit">Invia</button>
       </form >
     </>
