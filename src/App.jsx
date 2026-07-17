@@ -5,7 +5,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>Works
+    <><ol>
+      <li>Jeans</li>
+      <li>Maglia</li>
+      <li>Pantaloncini</li>
+      <li>Scarpe</li>
+    </ol>
     </>
   )
 }
