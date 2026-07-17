@@ -2,15 +2,23 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <><ol>
-      <li>Jeans</li>
-      <li>Maglia</li>
-      <li>Pantaloncini</li>
-      <li>Scarpe</li>
-    </ol>
+    <>
+      <div className="Lista">
+        <ol>
+          <li>Jeans</li>
+          <li>Maglia</li>
+          <li>Pantaloncini</li>
+          <li>Scarpe</li>
+        </ol>
+      </div>
+
+      <form className="form">
+        <input type="text" placeholder="Inserisci nuovo elemento" />
+        <button type="submit" onClick={(e) => { e.preventDefault() }}>Invia</button>
+      </form >
     </>
   )
 }
