@@ -2,17 +2,15 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [items, setItems] = useState([]);
 
 
   return (
     <>
       <div className="Lista">
-        <ol>
-          <li>Jeans</li>
-          <li>Maglia</li>
-          <li>Pantaloncini</li>
-          <li>Scarpe</li>
-        </ol>
+        <ul>
+          {items.map((item) => (<li key={item}>{item}</li>))};
+        </ul>
       </div>
 
       <form className="form">
