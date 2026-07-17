@@ -11,24 +11,11 @@ function App() {
     <>
       <Items items={items} />
 
-      <NewItem />
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (inputValue.trim() !== "") {
-            setItems((items) => items.concat(inputValue));
-            setInputValue("");
-          }
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Inserisci nuovo elemento"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button type="submit">Invia</button>
-      </form>
+      <NewItem
+        setItems={setItems}
+        setInputValue={setInputValue}
+        inputValue={inputValue}
+      />
     </>
   );
 }
