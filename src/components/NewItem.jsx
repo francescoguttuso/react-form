@@ -6,25 +6,34 @@ export const NewItem = (props) => {
     inputAuthor: "",
     inputTitle: "",
     inputBody: "",
-    inputPublic: "",
+    inputPublic: false,
   });
 
-  const [inputAuthor, setInputAuthor] = useState("");
-  const [inputTitle, setInputTitle] = useState("");
-  const [inputBody, setInputBody] = useState("");
-  const [inputPublic, setInputPublic] = useState("");
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (inputAuthor.trim() !== "") {
+        if (formData.inputAuthor.trim() !== "") {
           props.setItems((items) =>
-            items.concat({ inputAuthor, inputTitle, inputBody }),
+            items.concat({
+              author: formData.inputAuthor,
+              title: formData.inputTitle,
+              body: formData.inputBody,
+            }),
           );
-          setInputAuthor("");
-          setInputTitle("");
-          setInputBody("");
+          setFormData({
+            inputAuthor: "",
+            inputTitle: "",
+            inputBody: "",
+            inputPublic: "",
+          });
         }
       }}
     >
@@ -32,22 +41,22 @@ export const NewItem = (props) => {
         type="text"
         name="inputAuthor"
         placeholder="Inserisci autore"
-        value={inputAuthor}
-        onChange={(e) => setInputAuthor(e.target.value)}
+        value={formData.inputAuthor}
+        onChange={handleFormChange}
       />
       <input
         type="text"
         name="inputTitle"
         placeholder="Inserisci titolo"
-        value={inputTitle}
-        onChange={(e) => setInputTitle(e.target.value)}
+        value={formData.inputTitle}
+        onChange={handleFormChange}
       />
       <input
         type="text"
         name="inputBody"
         placeholder="Inserisci testo"
-        value={inputBody}
-        onChange={(e) => setInputBody(e.target.value)}
+        value={formData.inputBody}
+        onChange={handleFormChange}
       />
 
       <button type="submit">Invia</button>
