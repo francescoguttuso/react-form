@@ -1,16 +1,57 @@
 .delete {
-  background-color: #262dab; /* Un rosso discreto per l'eliminazione */
-  color: white;
-  border: none;
-  padding: 0.25rem 0.5rem; /* Padding molto ridotto rispetto al form */
-  font-size: 0.85rem; /* Testo più piccolo */
+  background-color: #c62828;
+  border: 1px solid #c62828;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0; /* Resetta eventuali margini automatici del form */
-  width: auto; /* Sovrascrive eventuali width: 100% */
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  width: auto;
+  margin: 0;
 }
 
 .delete:hover {
-  background-color: #262dab; /* Rosso più scuro al passaggio del mouse */
+  background-color: #dac6c6;
+  color: white;
+  border-color: #c62828;
+}
+
+.book-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid #262dab;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.book-title {
+  font-weight: bold;
+  color: #1a1f7c;
+  font-size: 1.05rem;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  color: #666666;
 }
