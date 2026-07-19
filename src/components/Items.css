@@ -1,0 +1,16 @@
+.delete {
+  background-color: #262dab; /* Un rosso discreto per l'eliminazione */
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem; /* Padding molto ridotto rispetto al form */
+  font-size: 0.85rem; /* Testo più piccolo */
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0; /* Resetta eventuali margini automatici del form */
+  width: auto; /* Sovrascrive eventuali width: 100% */
+  transition: background-color 0.2s ease;
+}
+
+.delete:hover {
+  background-color: #262dab; /* Rosso più scuro al passaggio del mouse */
+}

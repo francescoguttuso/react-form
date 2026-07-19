@@ -6,6 +6,7 @@ export const Items = (props) => (
         <li key={item.title}>
           {item.title}{" "}
           <button
+            className="delete"
             onClick={() =>
               props.setItems((items) => items.filter((_item) => _item !== item))
             }

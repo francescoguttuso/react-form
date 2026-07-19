@@ -14,7 +14,7 @@ export const NewItem = (props) => {
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: value,
     });
   };
 
@@ -67,7 +67,7 @@ export const NewItem = (props) => {
         value={formData.body}
         onChange={handleFormChange}
       />
-      <label htmlFor="checkbox">
+      <label className="checkbox" htmlFor="checkbox">
         libro letto
         <input
           id="checkbox"
