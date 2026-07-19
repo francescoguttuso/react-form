@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Items items={items} />
+      <Items items={items} setItems={setItems} />
 
       <NewItem setItems={setItems} />
     </>

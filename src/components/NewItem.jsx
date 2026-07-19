@@ -3,13 +3,15 @@ import "./NewItem.css";
 
 export const NewItem = (props) => {
   const [formData, setFormData] = useState({
-    inputAuthor: "",
-    inputTitle: "",
-    inputBody: "",
-    inputPublic: false,
+    author: "",
+    title: "",
+    body: "",
+    public: false,
   });
 
   const handleFormChange = (e) => {
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -20,42 +22,50 @@ export const NewItem = (props) => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (formData.inputAuthor.trim() !== "") {
+        if (formData.author.trim() !== "") {
           props.setItems((items) =>
             items.concat({
-              author: formData.inputAuthor,
-              title: formData.inputTitle,
-              body: formData.inputBody,
+              author: formData.author,
+              title: formData.title,
+              body: formData.body,
+              public: formData.public,
             }),
           );
           setFormData({
-            inputAuthor: "",
-            inputTitle: "",
-            inputBody: "",
-            inputPublic: "",
+            author: "",
+            title: "",
+            body: "",
+            public: false,
           });
         }
       }}
     >
       <input
         type="text"
-        name="inputAuthor"
+        name="author"
         placeholder="Inserisci autore"
-        value={formData.inputAuthor}
+        value={formData.author}
         onChange={handleFormChange}
       />
       <input
         type="text"
-        name="inputTitle"
+        name="title"
         placeholder="Inserisci titolo"
-        value={formData.inputTitle}
+        value={formData.title}
         onChange={handleFormChange}
       />
       <input
         type="text"
-        name="inputBody"
+        name="body"
         placeholder="Inserisci testo"
-        value={formData.inputBody}
+        value={formData.body}
+        onChange={handleFormChange}
+      />
+      <input
+        type="checkbox"
+        name="public"
+        placeholder="Inserisci testo"
+        checked={formData.public}
         onChange={handleFormChange}
       />
 

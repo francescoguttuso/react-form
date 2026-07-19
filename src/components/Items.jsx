@@ -3,11 +3,11 @@ export const Items = (props) => (
   <>
     <ul>
       {props.items.map((item) => (
-        <li key={item.inputTitle}>
-          {item.inputTitle}{" "}
+        <li key={item.title}>
+          {item.title}{" "}
           <button
             onClick={() =>
-              props.setItems(items.filter((_item) => _item !== item))
+              props.setItems((items) => items.filter((_item) => _item !== item))
             }
           >
             Elimina
