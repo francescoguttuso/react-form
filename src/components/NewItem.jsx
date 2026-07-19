@@ -40,36 +40,46 @@ export const NewItem = (props) => {
         }
       }}
     >
+      <label htmlFor="author">Inserisci il nome dell'autore:</label>
       <input
+        id="author"
         type="text"
         name="author"
         placeholder="Inserisci autore"
         value={formData.author}
         onChange={handleFormChange}
       />
+      <label htmlFor="title">Inserisci il titolo del libro:</label>
       <input
+        id="title"
         type="text"
         name="title"
         placeholder="Inserisci titolo"
         value={formData.title}
         onChange={handleFormChange}
       />
+      <label htmlFor="text">Inserisci un appunto sul libro:</label>
       <input
+        id="text"
         type="text"
         name="body"
         placeholder="Inserisci testo"
         value={formData.body}
         onChange={handleFormChange}
       />
-      <input
-        type="checkbox"
-        name="public"
-        placeholder="Inserisci testo"
-        checked={formData.public}
-        onChange={handleFormChange}
-      />
+      <label htmlFor="checkbox">
+        libro letto
+        <input
+          id="checkbox"
+          type="checkbox"
+          name="public"
+          placeholder="Inserisci testo"
+          checked={formData.public}
+          onChange={handleFormChange}
+        />
+      </label>
 
-      <button type="submit">Invia</button>
+      <button type="submit">Aggiungi alla mia Libreria</button>
     </form>
   );
 };

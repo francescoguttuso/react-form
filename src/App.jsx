@@ -8,6 +8,8 @@ function App() {
 
   return (
     <>
+      <h2>LA MIA LIBRERIA</h2>
+      <p>La mia lista di libri letti e da leggere</p>
       <Items items={items} setItems={setItems} />
 
       <NewItem setItems={setItems} />
